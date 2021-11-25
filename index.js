@@ -2,16 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose')
 const app = express();
 
-const Person = require('./models/Person');
- 
 app.use(express.urlencoded({
     extended: true
 }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Hello World');
-});
+const personRoutes = require('./routes/personsRoutes');
+
+app.use('/', personRoutes);
 
 mongoose.connect(' mongodb+srv://admin:quickdev@quickdev.tu0s5.mongodb.net/Quickdev-Desafio?retryWrites=true&w=majority')
     .then(() => {
