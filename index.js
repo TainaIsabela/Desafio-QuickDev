@@ -7,11 +7,11 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
-const personRoutes = require('./routes/personsRoutes');
+const personControllers = require('./controllers/persons');
 
-app.use('/', personRoutes);
+app.use('/', personControllers);
 
-mongoose.connect(' mongodb+srv://admin:quickdev@quickdev.tu0s5.mongodb.net/Quickdev-Desafio?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:quickdev@quickdev.tu0s5.mongodb.net/Quickdev-Desafio?retryWrites=true&w=majority')
     .then(() => {
         console.log('Conectado ao MongoDB');
         app.listen(3000, () => {

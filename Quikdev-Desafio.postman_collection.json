@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "4d8f7a1b-db08-4600-908c-dd9a978a353c",
+		"name": "Quikdev-Desafio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{urlBase}}/:username",
+					"host": [
+						"{{urlBase}}"
+					],
+					"path": [
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Lira\",\n    \"username\": \"Lira\",\n    \"birthdate\": \"11/12/1991\",\n    \"address\": \"Luxemburgo\",\n    \"addressNumber\": \"12\",\n    \"primaryPhone\": \"(XX) XXXX-XXXX\",\n    \"description\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlBase}}/persons",
+					"host": [
+						"{{urlBase}}"
+					],
+					"path": [
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Marie Antonieta\",\n    \"username\": \"marie\",\n    \"birthdate\": \"17/08/1700\",\n    \"address\": \"France\",\n    \"addressNumber\": \"12\",\n    \"primaryPhone\": \"(XX) XXXX-XXXX\",\n    \"description\": \"Test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{urlBase}}/:username",
+					"host": [
+						"{{urlBase}}"
+					],
+					"path": [
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{urlBase}}/:username",
+					"host": [
+						"{{urlBase}}"
+					],
+					"path": [
+						":username"
+					],
+					"variable": [
+						{
+							"key": "username",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
